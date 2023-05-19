@@ -47,6 +47,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun reset(){
-        
+        one.isEnabled = true
+        two.isEnabled = true
+        three.isEnabled = true
+        four.isEnabled = true
+        five.isEnabled = true
+        six.isEnabled = true
+        seven.isEnabled = true
+        eight.isEnabled = true
+        nine.isEnabled = true
+        ten.isEnabled = true
+
+        one.setImageDrawable(null)
+        two.setImageDrawable(null)
+        three.setImageDrawable(null)
+        four.setImageDrawable(null)
+        five.setImageDrawable(null)
+        six.setImageDrawable(null)
+        seven.setImageDrawable(null)
+        eight.setImageDrawable(null)
+        nine.setImageDrawable(null)
+        ten.setImageDrawable(null)
     }
 }

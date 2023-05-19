@@ -1,16 +1,13 @@
 package com.example.oopsiecard
 
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var punchedHoles: ArrayList<Int>
-    private var holePunchedImages: ArrayList<Drawable> = ArrayList()
+    private var holePunchedImages: ArrayList<Int> = ArrayList()
     private var one: ImageButton = findViewById(R.id.button1)
     private var two: ImageButton = findViewById(R.id.button2)
     private var three: ImageButton = findViewById(R.id.button3)
@@ -31,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     fun holePunch(view: View){
         val button: ImageButton = view as ImageButton
-        button.setImageDrawable(holePunchedImages.random())
+        button.setImageResource(holePunchedImages.random())
         button.isEnabled = false
         if(!one.isEnabled && !two.isEnabled){
             if(!three.isEnabled && !four.isEnabled){
@@ -58,15 +55,15 @@ class MainActivity : AppCompatActivity() {
         nine.isEnabled = true
         ten.isEnabled = true
 
-        one.setImageDrawable(null)
-        two.setImageDrawable(null)
-        three.setImageDrawable(null)
-        four.setImageDrawable(null)
-        five.setImageDrawable(null)
-        six.setImageDrawable(null)
-        seven.setImageDrawable(null)
-        eight.setImageDrawable(null)
-        nine.setImageDrawable(null)
-        ten.setImageDrawable(null)
+        one.setImageResource(0)
+        two.setImageResource(0)
+        three.setImageResource(0)
+        four.setImageResource(0)
+        five.setImageResource(0)
+        six.setImageResource(0)
+        seven.setImageResource(0)
+        eight.setImageResource(0)
+        nine.setImageResource(0)
+        ten.setImageResource(0)
     }
 }

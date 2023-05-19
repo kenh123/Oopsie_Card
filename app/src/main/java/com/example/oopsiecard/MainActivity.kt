@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var punchedHoles: ArrayList<Int>
     private var holePunchedImages: ArrayList<Int> = ArrayList()
     private var one: ImageButton = findViewById(R.id.button1)
     private var two: ImageButton = findViewById(R.id.button2)

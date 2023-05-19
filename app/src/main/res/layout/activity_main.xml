@@ -43,45 +43,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
+            android:contentDescription="@string/_1"
+            android:onClick="holePunch"
             android:text="@string/_1"
-            android:textColor="#040303"
-            android:contentDescription="@string/_1" />
+            android:textColor="#040303" />
 
         <ImageButton
             android:id="@+id/button2"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_2"
+            android:onClick="holePunch"
             android:text="@string/_2"
-            android:textColor="#040303"
-            android:contentDescription="@string/_2" />
+            android:textColor="#040303" />
 
         <ImageButton
             android:id="@+id/button3"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_3"
+            android:onClick="holePunch"
             android:text="@string/_3"
-            android:textColor="#040303"
-            android:contentDescription="@string/_3" />
+            android:textColor="#040303" />
 
         <ImageButton
             android:id="@+id/button4"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_4"
+            android:onClick="holePunch"
             android:text="@string/_4"
-            android:textColor="#040303"
-            android:contentDescription="@string/_4" />
+            android:textColor="#040303" />
 
         <ImageButton
             android:id="@+id/button5"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_5"
+            android:onClick="holePunch"
             android:text="@string/_5"
-            android:textColor="#040303"
-            android:contentDescription="@string/_5" />
+            android:textColor="#040303" />
     </TableRow>
 
     <TableRow
@@ -100,44 +105,49 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_6"
+            android:onClick="holePunch"
             android:text="@string/_6"
-            android:textColor="#040303"
-            android:contentDescription="@string/_6" />
+            android:textColor="#040303" />
 
         <ImageButton
             android:id="@+id/button7"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_7"
+            android:onClick="holePunch"
             android:text="@string/_7"
-            android:textColor="#040303"
-            android:contentDescription="@string/_7" />
+            android:textColor="#040303" />
 
         <ImageButton
             android:id="@+id/button8"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_8"
+            android:onClick="holePunch"
             android:text="@string/_8"
-            android:textColor="#040303"
-            android:contentDescription="@string/_8" />
+            android:textColor="#040303" />
 
         <ImageButton
             android:id="@+id/button9"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_9"
+            android:onClick="holePunch"
             android:text="@string/_9"
-            android:textColor="#040303"
-            android:contentDescription="@string/_9" />
+            android:textColor="#040303" />
 
         <ImageButton
             android:id="@+id/button10"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/_10"
+            android:onClick="holePunch"
             android:text="@string/_10"
-            android:textColor="#040303"
-            android:contentDescription="@string/_10" />
+            android:textColor="#040303" />
     </TableRow>
 </TableLayout>

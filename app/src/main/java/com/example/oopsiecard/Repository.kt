@@ -7,7 +7,6 @@ import java.util.concurrent.Executors
 
 class Repository(application: Application) {
     private val mPunchedHolesDAO: PunchedHolesDAO
-    private val mPunchedHoles: PunchedHoles? = null
 
     var allPunchedHoles: List<Int>? = null
     private val NUMBER_OF_THREADS = 4
@@ -28,11 +27,16 @@ class Repository(application: Application) {
 
     fun delete(punchedHoles: PunchedHoles?) {
         databaseExecutor.execute { mPunchedHolesDAO.delete(punchedHoles) }
+
     }
 
     fun allHoles(){
         databaseExecutor.execute {allPunchedHoles = mPunchedHolesDAO.allHoles()}
+        sleep()
+    }
 
+    private fun sleep(){
+        Thread.sleep(100)
     }
 
 }

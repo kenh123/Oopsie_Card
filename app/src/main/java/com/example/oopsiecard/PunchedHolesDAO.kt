@@ -16,6 +16,6 @@ interface PunchedHolesDAO {
     @Delete
     fun delete(punchedHoles: PunchedHoles?)
 
-    @get:Query("SELECT * FROM PunchedHoles ORDER BY holeId ASC")
-    val allHoles: List<PunchedHoles?>?
+    @Query("SELECT resourceId FROM PunchedHoles ORDER BY holeId ASC")
+    fun allHoles():List<Int>
 }

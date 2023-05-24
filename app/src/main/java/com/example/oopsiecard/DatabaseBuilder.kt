@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
 
-//@Database(entities = {PunchedHoles::class}, version = 1, exportSchema = false)
+@Database(entities = [PunchedHoles::class], version = 1, exportSchema = false)
 abstract class DatabaseBuilder: RoomDatabase() {
 
     abstract fun punchedHolesDAO(): PunchedHolesDAO

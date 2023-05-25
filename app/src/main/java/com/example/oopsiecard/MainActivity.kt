@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         nine.isEnabled = true
         ten.isEnabled = true
 
+        //TODO change image resource
         one.setImageResource(0)
         two.setImageResource(0)
         three.setImageResource(0)
@@ -101,5 +102,7 @@ class MainActivity : AppCompatActivity() {
         ten.setImageResource(0)
         //repository.update(PunchedHoles(11, allHoles!![10].))
         //TODO make code to add one to number 11
+
     }
+    //TODO find images to use, find confetti animation, add encouraging texts, make oopsie counter
 }

@@ -8,7 +8,7 @@ import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
     private lateinit var repository: Repository
-    private var allHoles: List<Int>? = null
+    private var allHoles: ArrayList<Int>? = null
     private var holePunchedImages: ArrayList<Int> = ArrayList()
     private var one: ImageButton = findViewById(R.id.button1)
     private var two: ImageButton = findViewById(R.id.button2)
@@ -26,16 +26,43 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         repository = Repository(Application())
-        allHoles = repository.allPunchedHoles
+        allHoles = repository.allPunchedHoles as ArrayList<Int>?
 
         if(allHoles == null){
-            //will be used to set first images and set allHoles for later
+
+            /*repository.insert(PunchedHoles(one.id, null))
+            repository.insert(PunchedHoles(two.id, ))
+            repository.insert(PunchedHoles(three.id, ))
+            repository.insert(PunchedHoles(four.id, ))
+            repository.insert(PunchedHoles(five.id, ))
+            repository.insert(PunchedHoles(six.id, ))
+            repository.insert(PunchedHoles(seven.id, ))
+            repository.insert(PunchedHoles(eight.id, ))
+            repository.insert(PunchedHoles(nine.id, ))
+            repository.insert(PunchedHoles(ten.id, ))
+            repository.insert(PunchedHoles(11, 0))
+
+            allHoles = repository.allPunchedHoles as ArrayList<Int>*/
         }
+
+        one.setImageResource(allHoles!![0])
+        two.setImageResource(allHoles!![1])
+        three.setImageResource(allHoles!![2])
+        four.setImageResource(allHoles!![3])
+        five.setImageResource(allHoles!![4])
+        six.setImageResource(allHoles!![5])
+        seven.setImageResource(allHoles!![6])
+        eight.setImageResource(allHoles!![7])
+        nine.setImageResource(allHoles!![8])
+        ten.setImageResource(allHoles!![9])
     }
 
     fun holePunch(view: View){
         val button: ImageButton = view as ImageButton
-        button.setImageResource(holePunchedImages.random())
+        val buttonId: Int = button.id
+        val newPicture: Int = holePunchedImages.random()
+        button.setImageResource(newPicture)
+        repository.update(PunchedHoles(buttonId, newPicture))
         button.isEnabled = false
         if(!one.isEnabled && !two.isEnabled){
             if(!three.isEnabled && !four.isEnabled){
@@ -72,5 +99,7 @@ class MainActivity : AppCompatActivity() {
         eight.setImageResource(0)
         nine.setImageResource(0)
         ten.setImageResource(0)
+        //repository.update(PunchedHoles(11, allHoles!![10].))
+        //TODO make code to add one to number 11
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
     private lateinit var repository: Repository
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private var eight: ImageButton = findViewById(R.id.button8)
     private var nine: ImageButton = findViewById(R.id.button9)
     private var ten: ImageButton = findViewById(R.id.button10)
+    private var counter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +43,8 @@ class MainActivity : AppCompatActivity() {
             repository.insert(PunchedHoles(nine.id, ))
             repository.insert(PunchedHoles(ten.id, ))
             repository.insert(PunchedHoles(11, 0))
-
             allHoles = repository.allPunchedHoles as ArrayList<Int>*/
+
         }
 
         one.setImageResource(allHoles!![0])
@@ -55,6 +57,13 @@ class MainActivity : AppCompatActivity() {
         eight.setImageResource(allHoles!![7])
         nine.setImageResource(allHoles!![8])
         ten.setImageResource(allHoles!![9])
+        counter = allHoles!![10]
+    }
+
+    fun useOopsie(view:View){
+        counter--
+        repository.update(PunchedHoles(11, counter))
+
     }
 
     fun holePunch(view: View){
@@ -100,9 +109,20 @@ class MainActivity : AppCompatActivity() {
         eight.setImageResource(0)
         nine.setImageResource(0)
         ten.setImageResource(0)
-        //repository.update(PunchedHoles(11, allHoles!![10].))
-        //TODO make code to add one to number 11
+
+        counter++
+        repository.update(PunchedHoles(11, counter))
+        /*repository.update(PunchedHoles(1, ))
+        repository.update(PunchedHoles(2, ))
+        repository.update(PunchedHoles(3, ))
+        repository.update(PunchedHoles(4, ))
+        repository.update(PunchedHoles(5, ))
+        repository.update(PunchedHoles(6, ))
+        repository.update(PunchedHoles(7, ))
+        repository.update(PunchedHoles(8, ))
+        repository.update(PunchedHoles(9, ))
+        repository.update(PunchedHoles(10, ))*/
 
     }
-    //TODO find images to use, find confetti animation, add encouraging texts, make oopsie counter
+    //TODO find images to use, find confetti animation, add encouraging texts
 }

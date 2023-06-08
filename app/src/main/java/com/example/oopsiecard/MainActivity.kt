@@ -32,18 +32,18 @@ class MainActivity : AppCompatActivity() {
 
         if(allHoles == null){
 
-            /*repository.insert(PunchedHoles(one.id, null))
-            repository.insert(PunchedHoles(two.id, ))
-            repository.insert(PunchedHoles(three.id, ))
-            repository.insert(PunchedHoles(four.id, ))
-            repository.insert(PunchedHoles(five.id, ))
-            repository.insert(PunchedHoles(six.id, ))
-            repository.insert(PunchedHoles(seven.id, ))
-            repository.insert(PunchedHoles(eight.id, ))
-            repository.insert(PunchedHoles(nine.id, ))
-            repository.insert(PunchedHoles(ten.id, ))
+            repository.insert(PunchedHoles(one.id, R.drawable.number1))
+            repository.insert(PunchedHoles(two.id, R.drawable.number2))
+            repository.insert(PunchedHoles(three.id, R.drawable.number3))
+            repository.insert(PunchedHoles(four.id, R.drawable.number4))
+            repository.insert(PunchedHoles(five.id, R.drawable.number5))
+            repository.insert(PunchedHoles(six.id, R.drawable.number6))
+            repository.insert(PunchedHoles(seven.id, R.drawable.number7))
+            repository.insert(PunchedHoles(eight.id, R.drawable.number8))
+            repository.insert(PunchedHoles(nine.id, R.drawable.number9))
+            repository.insert(PunchedHoles(ten.id, R.drawable.number10))
             repository.insert(PunchedHoles(11, 0))
-            allHoles = repository.allPunchedHoles as ArrayList<Int>*/
+            allHoles = repository.allPunchedHoles as ArrayList<Int>
 
         }
 
@@ -98,30 +98,29 @@ class MainActivity : AppCompatActivity() {
         nine.isEnabled = true
         ten.isEnabled = true
 
-        //TODO change image resource
-        one.setImageResource(0)
-        two.setImageResource(0)
-        three.setImageResource(0)
-        four.setImageResource(0)
-        five.setImageResource(0)
-        six.setImageResource(0)
-        seven.setImageResource(0)
-        eight.setImageResource(0)
-        nine.setImageResource(0)
-        ten.setImageResource(0)
+        one.setImageResource(R.drawable.number1)
+        two.setImageResource(R.drawable.number2)
+        three.setImageResource(R.drawable.number3)
+        four.setImageResource(R.drawable.number4)
+        five.setImageResource(R.drawable.number5)
+        six.setImageResource(R.drawable.number6)
+        seven.setImageResource(R.drawable.number7)
+        eight.setImageResource(R.drawable.number8)
+        nine.setImageResource(R.drawable.number9)
+        ten.setImageResource(R.drawable.number10)
 
         counter++
         repository.update(PunchedHoles(11, counter))
-        /*repository.update(PunchedHoles(1, ))
-        repository.update(PunchedHoles(2, ))
-        repository.update(PunchedHoles(3, ))
-        repository.update(PunchedHoles(4, ))
-        repository.update(PunchedHoles(5, ))
-        repository.update(PunchedHoles(6, ))
-        repository.update(PunchedHoles(7, ))
-        repository.update(PunchedHoles(8, ))
-        repository.update(PunchedHoles(9, ))
-        repository.update(PunchedHoles(10, ))*/
+        repository.update(PunchedHoles(1, R.drawable.number1))
+        repository.update(PunchedHoles(2, R.drawable.number2))
+        repository.update(PunchedHoles(3, R.drawable.number3))
+        repository.update(PunchedHoles(4, R.drawable.number4))
+        repository.update(PunchedHoles(5, R.drawable.number5))
+        repository.update(PunchedHoles(6, R.drawable.number6))
+        repository.update(PunchedHoles(7, R.drawable.number7))
+        repository.update(PunchedHoles(8, R.drawable.number8))
+        repository.update(PunchedHoles(9, R.drawable.number9))
+        repository.update(PunchedHoles(10, R.drawable.number10))
 
     }
     //TODO find images to use, find confetti animation, add encouraging texts

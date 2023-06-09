@@ -27,6 +27,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        holePunchedImages.add(R.drawable.heart)
+        holePunchedImages.add(R.drawable.kite)
+        holePunchedImages.add(R.drawable.smileyface)
+        holePunchedImages.add(R.drawable.shootingstar)
+        holePunchedImages.add(R.drawable.star)
+
         repository = Repository(Application())
         allHoles = repository.allPunchedHoles as ArrayList<Int>?
 

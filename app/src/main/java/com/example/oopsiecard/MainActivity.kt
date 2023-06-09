@@ -1,16 +1,17 @@
 package com.example.oopsiecard
 
+import android.app.AlertDialog
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
-import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
     private lateinit var repository: Repository
     private var allHoles: ArrayList<Int>? = null
     private var holePunchedImages: ArrayList<Int> = ArrayList()
+    private var titles: ArrayList<CharSequence> = ArrayList()
     private var one: ImageButton = findViewById(R.id.button1)
     private var two: ImageButton = findViewById(R.id.button2)
     private var three: ImageButton = findViewById(R.id.button3)
@@ -32,6 +33,13 @@ class MainActivity : AppCompatActivity() {
         holePunchedImages.add(R.drawable.smileyface)
         holePunchedImages.add(R.drawable.shootingstar)
         holePunchedImages.add(R.drawable.star)
+
+        titles.add("You did it!")
+        titles.add("Awesome job")
+        titles.add("That's my little guy!")
+        titles.add("Good job bud!")
+        titles.add("I knew you could do it!")
+        titles.add("Keep it up!")
 
         repository = Repository(Application())
         allHoles = repository.allPunchedHoles as ArrayList<Int>?
@@ -79,6 +87,10 @@ class MainActivity : AppCompatActivity() {
         button.setImageResource(newPicture)
         repository.update(PunchedHoles(buttonId, newPicture))
         button.isEnabled = false
+        val alertDialog = AlertDialog.Builder(application)
+        alertDialog.setTitle(titles.random())
+        //alertDialog.setNeutralButton("Yay!", )
+        alertDialog.show()
         if(!one.isEnabled && !two.isEnabled){
             if(!three.isEnabled && !four.isEnabled){
                 if(!five.isEnabled && !six.isEnabled){
@@ -129,5 +141,5 @@ class MainActivity : AppCompatActivity() {
         repository.update(PunchedHoles(10, R.drawable.number10))
 
     }
-    //TODO find images to use, find confetti animation, add encouraging texts
+    //TODO find confetti animation, add encouraging texts
 }

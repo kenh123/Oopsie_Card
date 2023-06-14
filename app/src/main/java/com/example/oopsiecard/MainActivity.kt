@@ -2,10 +2,17 @@ package com.example.oopsiecard
 
 import android.app.AlertDialog
 import android.app.Application
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageButton
+import android.widget.LinearLayout
+import android.widget.PopupWindow
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var repository: Repository
@@ -22,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private var eight: ImageButton = findViewById(R.id.button8)
     private var nine: ImageButton = findViewById(R.id.button9)
     private var ten: ImageButton = findViewById(R.id.button10)
+    private var popupMessage: TextView = findViewById(R.id.popupMessage)
     private var counter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -80,22 +88,37 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun holePunch(view: View){
+    fun holePunch(view: View) {
         val button: ImageButton = view as ImageButton
         val buttonId: Int = button.id
         val newPicture: Int = holePunchedImages.random()
         button.setImageResource(newPicture)
         repository.update(PunchedHoles(buttonId, newPicture))
         button.isEnabled = false
-        val alertDialog = AlertDialog.Builder(application)
-        alertDialog.setTitle(titles.random())
-        //alertDialog.setNeutralButton("Yay!", )
-        alertDialog.show()
-        if(!one.isEnabled && !two.isEnabled){
-            if(!three.isEnabled && !four.isEnabled){
-                if(!five.isEnabled && !six.isEnabled){
-                    if(!seven.isEnabled && !eight.isEnabled){
-                        if(!nine.isEnabled && !ten.isEnabled){
+
+        val inflater: LayoutInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val popupView: View = inflater.inflate(R.layout.popup, null)
+
+        val width: Int = LinearLayout.LayoutParams.WRAP_CONTENT
+        val height: Int = LinearLayout.LayoutParams.WRAP_CONTENT
+        val focusable: Boolean = true
+        val popupWindow: PopupWindow = PopupWindow(popupView, width, height, focusable)
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
+        popupMessage.text = titles.random()
+
+        popupView.setOnTouchListener(object : View.OnTouchListener{
+            override fun onTouch(p0: View?, p1: MotionEvent?): Boolean {
+                popupWindow.dismiss()
+                return true
+            }
+        })
+
+
+        if (!one.isEnabled && !two.isEnabled) {
+            if (!three.isEnabled && !four.isEnabled) {
+                if (!five.isEnabled && !six.isEnabled) {
+                    if (!seven.isEnabled && !eight.isEnabled) {
+                        if (!nine.isEnabled && !ten.isEnabled) {
                             reset()
                         }
                     }
@@ -103,7 +126,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
     private fun reset(){
         one.isEnabled = true
         two.isEnabled = true

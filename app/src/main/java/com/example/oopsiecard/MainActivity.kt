@@ -101,8 +101,8 @@ class MainActivity : AppCompatActivity() {
 
         val width: Int = LinearLayout.LayoutParams.WRAP_CONTENT
         val height: Int = LinearLayout.LayoutParams.WRAP_CONTENT
-        val focusable: Boolean = true
-        val popupWindow: PopupWindow = PopupWindow(popupView, width, height, focusable)
+        val focusable = true
+        val popupWindow = PopupWindow(popupView, width, height, focusable)
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
         popupMessage.text = titles.random()
 
@@ -163,5 +163,5 @@ class MainActivity : AppCompatActivity() {
         repository.update(PunchedHoles(10, R.drawable.number10))
 
     }
-    //TODO find confetti animation, add encouraging texts
+    //TODO add confetti animation
 }

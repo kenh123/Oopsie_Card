@@ -10,6 +10,11 @@
     android:clipChildren="false"
     tools:context=".MainActivity">
 
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/confetti"/>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"

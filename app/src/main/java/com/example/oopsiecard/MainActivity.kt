@@ -13,6 +13,7 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
+import nl.dionsegijn.konfetti.xml.KonfettiView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var repository: Repository
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private var nine: ImageButton = findViewById(R.id.button9)
     private var ten: ImageButton = findViewById(R.id.button10)
     private var popupMessage: TextView = findViewById(R.id.popupMessage)
+    private var confetti: KonfettiView = findViewById(R.id.confetti)
     private var counter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,6 +3,7 @@ package com.example.oopsiecard
 import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -67,19 +68,21 @@ class MainActivity : AppCompatActivity() {
 
         if(allHoles == null){
 
-            repository.insert(PunchedHoles(one.id, R.drawable.number1))
-            repository.insert(PunchedHoles(two.id, R.drawable.number2))
-            repository.insert(PunchedHoles(three.id, R.drawable.number3))
-            repository.insert(PunchedHoles(four.id, R.drawable.number4))
-            repository.insert(PunchedHoles(five.id, R.drawable.number5))
-            repository.insert(PunchedHoles(six.id, R.drawable.number6))
-            repository.insert(PunchedHoles(seven.id, R.drawable.number7))
-            repository.insert(PunchedHoles(eight.id, R.drawable.number8))
-            repository.insert(PunchedHoles(nine.id, R.drawable.number9))
-            repository.insert(PunchedHoles(ten.id, R.drawable.number10))
+            repository.insert(PunchedHoles(1, R.drawable.number1))
+            repository.insert(PunchedHoles(2, R.drawable.number2))
+            repository.insert(PunchedHoles(3, R.drawable.number3))
+            repository.insert(PunchedHoles(4, R.drawable.number4))
+            repository.insert(PunchedHoles(5, R.drawable.number5))
+            repository.insert(PunchedHoles(6, R.drawable.number6))
+            repository.insert(PunchedHoles(7, R.drawable.number7))
+            repository.insert(PunchedHoles(8, R.drawable.number8))
+            repository.insert(PunchedHoles(9, R.drawable.number9))
+            repository.insert(PunchedHoles(10, R.drawable.number10))
             repository.insert(PunchedHoles(11, 0))
-            allHoles = repository.allPunchedHoles as ArrayList<Int>
-
+            repository.allHoles()
+            allHoles = repository.allPunchedHoles as ArrayList<Int>?
+            Log.d("TAG", repository.allPunchedHoles.toString())
+            Log.d("TAG", allHoles.toString())
         }
 
         one.setImageResource(allHoles!![0])

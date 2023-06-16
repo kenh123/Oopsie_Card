@@ -10,14 +10,14 @@ import androidx.room.Update
 @Dao
 interface PunchedHolesDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(punchedHoles: PunchedHoles?)
+    fun insert(punchedHoles: PunchedHoles)
 
     @Update
-    fun update(punchedHoles: PunchedHoles?)
+    fun update(punchedHoles: PunchedHoles)
 
     @Delete
-    fun delete(punchedHoles: PunchedHoles?)
+    fun delete(punchedHoles: PunchedHoles)
 
-    @Query("SELECT resourceId FROM PunchedHoles ORDER BY holeId ASC")
+    @Query("SELECT resourceId FROM punchedHoles ORDER BY holeId ASC")
     fun allHoles():List<Int>
 }

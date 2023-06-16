@@ -17,15 +17,16 @@ class Repository(application: Application) {
         mPunchedHolesDAO = db.punchedHolesDAO()
     }
 
-    fun insert(punchedHoles: PunchedHoles?) {
-        databaseExecutor.execute { mPunchedHolesDAO.insert(punchedHoles) }
+    fun insert(punchedHoles: PunchedHoles) {
+        databaseExecutor.execute { mPunchedHolesDAO.insert(punchedHoles)
+        }
     }
 
-    fun update(punchedHoles: PunchedHoles?) {
+    fun update(punchedHoles: PunchedHoles) {
         databaseExecutor.execute { mPunchedHolesDAO.update(punchedHoles) }
     }
 
-    fun delete(punchedHoles: PunchedHoles?) {
+    fun delete(punchedHoles: PunchedHoles) {
         databaseExecutor.execute { mPunchedHolesDAO.delete(punchedHoles) }
 
     }
@@ -36,7 +37,7 @@ class Repository(application: Application) {
     }
 
     private fun sleep(){
-        Thread.sleep(100)
+        Thread.sleep(1500)
     }
 
 }

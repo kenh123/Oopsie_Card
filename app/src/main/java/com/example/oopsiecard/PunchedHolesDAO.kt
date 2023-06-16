@@ -1,11 +1,13 @@
 package com.example.oopsiecard
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 
+@Dao
 interface PunchedHolesDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(punchedHoles: PunchedHoles?)

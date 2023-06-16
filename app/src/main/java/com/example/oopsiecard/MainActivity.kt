@@ -1,8 +1,6 @@
 package com.example.oopsiecard
 
-import android.app.AlertDialog
 import android.app.Application
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -20,23 +18,35 @@ class MainActivity : AppCompatActivity() {
     private var allHoles: ArrayList<Int>? = null
     private var holePunchedImages: ArrayList<Int> = ArrayList()
     private var titles: ArrayList<CharSequence> = ArrayList()
-    private var one: ImageButton = findViewById(R.id.button1)
-    private var two: ImageButton = findViewById(R.id.button2)
-    private var three: ImageButton = findViewById(R.id.button3)
-    private var four: ImageButton = findViewById(R.id.button4)
-    private var five: ImageButton = findViewById(R.id.button5)
-    private var six: ImageButton = findViewById(R.id.button6)
-    private var seven: ImageButton = findViewById(R.id.button7)
-    private var eight: ImageButton = findViewById(R.id.button8)
-    private var nine: ImageButton = findViewById(R.id.button9)
-    private var ten: ImageButton = findViewById(R.id.button10)
-    private var popupMessage: TextView = findViewById(R.id.popupMessage)
-    private var confetti: KonfettiView = findViewById(R.id.confetti)
+    private lateinit var one: ImageButton //= findViewById(R.id.button1)
+    private lateinit var two: ImageButton //= findViewById(R.id.button2)
+    private lateinit var three: ImageButton //= findViewById(R.id.button3)
+    private lateinit var four: ImageButton //= findViewById(R.id.button4)
+    private lateinit var five: ImageButton //= findViewById(R.id.button5)
+    private lateinit var six: ImageButton //= findViewById(R.id.button6)
+    private lateinit var seven: ImageButton //= findViewById(R.id.button7)
+    private lateinit var eight: ImageButton //= findViewById(R.id.button8)
+    private lateinit var nine: ImageButton //= findViewById(R.id.button9)
+    private lateinit var ten: ImageButton //= findViewById(R.id.button10)
+    private lateinit var popupMessage: TextView //= findViewById(R.id.popupMessage)
+    private lateinit var confetti: KonfettiView //= findViewById(R.id.confetti)
     private var counter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        application.onCreate()
         setContentView(R.layout.activity_main)
+
+        one = findViewById(R.id.button1)
+        two = findViewById(R.id.button2)
+        three = findViewById(R.id.button3)
+        four = findViewById(R.id.button4)
+        five = findViewById(R.id.button5)
+        six = findViewById(R.id.button6)
+        seven = findViewById(R.id.button7)
+        eight = findViewById(R.id.button8)
+        nine = findViewById(R.id.button9)
+        ten = findViewById(R.id.button10)
 
         holePunchedImages.add(R.drawable.heart)
         holePunchedImages.add(R.drawable.kite)
@@ -51,7 +61,8 @@ class MainActivity : AppCompatActivity() {
         titles.add("I knew you could do it!")
         titles.add("Keep it up!")
 
-        repository = Repository(Application())
+
+        repository = Repository(application)
         allHoles = repository.allPunchedHoles as ArrayList<Int>?
 
         if(allHoles == null){
@@ -106,6 +117,8 @@ class MainActivity : AppCompatActivity() {
         val focusable = true
         val popupWindow = PopupWindow(popupView, width, height, focusable)
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
+        confetti = findViewById(R.id.confetti)
+        popupMessage = findViewById(R.id.popupMessage)
         popupMessage.text = titles.random()
 
         popupView.setOnTouchListener(object : View.OnTouchListener{

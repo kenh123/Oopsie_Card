@@ -19,18 +19,18 @@ class MainActivity : AppCompatActivity() {
     private var allHoles: ArrayList<Int>? = null
     private var holePunchedImages: ArrayList<Int> = ArrayList()
     private var titles: ArrayList<CharSequence> = ArrayList()
-    private lateinit var one: ImageButton //= findViewById(R.id.button1)
-    private lateinit var two: ImageButton //= findViewById(R.id.button2)
-    private lateinit var three: ImageButton //= findViewById(R.id.button3)
-    private lateinit var four: ImageButton //= findViewById(R.id.button4)
-    private lateinit var five: ImageButton //= findViewById(R.id.button5)
-    private lateinit var six: ImageButton //= findViewById(R.id.button6)
-    private lateinit var seven: ImageButton //= findViewById(R.id.button7)
-    private lateinit var eight: ImageButton //= findViewById(R.id.button8)
-    private lateinit var nine: ImageButton //= findViewById(R.id.button9)
-    private lateinit var ten: ImageButton //= findViewById(R.id.button10)
-    private lateinit var popupMessage: TextView //= findViewById(R.id.popupMessage)
-    private lateinit var confetti: KonfettiView //= findViewById(R.id.confetti)
+    private lateinit var one: ImageButton
+    private lateinit var two: ImageButton
+    private lateinit var three: ImageButton
+    private lateinit var four: ImageButton
+    private lateinit var five: ImageButton
+    private lateinit var six: ImageButton
+    private lateinit var seven: ImageButton
+    private lateinit var eight: ImageButton
+    private lateinit var nine: ImageButton
+    private lateinit var ten: ImageButton
+    private lateinit var popupMessage: TextView
+    private lateinit var confetti: KonfettiView
     private var counter: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,8 +81,6 @@ class MainActivity : AppCompatActivity() {
             repository.insert(PunchedHoles(11, 0))
             repository.allHoles()
             allHoles = repository.allPunchedHoles as ArrayList<Int>?
-            Log.d("TAG", repository.allPunchedHoles.toString())
-            Log.d("TAG", allHoles.toString())
         }
 
         one.setImageResource(allHoles!![0])
@@ -120,9 +118,7 @@ class MainActivity : AppCompatActivity() {
         val focusable = true
         val popupWindow = PopupWindow(popupView, width, height, focusable)
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
-        confetti = findViewById(R.id.confetti)
-        popupMessage = findViewById(R.id.popupMessage)
-        popupMessage.text = titles.random()
+        //confetti = findViewById(R.id.confetti)
 
         popupView.setOnTouchListener(object : View.OnTouchListener{
             override fun onTouch(p0: View?, p1: MotionEvent?): Boolean {
@@ -130,7 +126,9 @@ class MainActivity : AppCompatActivity() {
                 return true
             }
         })
-
+        //TODO figure out how to change pop up message later
+        //popupMessage = findViewById(R.id.popupMessage)
+        //popupMessage.text = titles.random()
 
         if (!one.isEnabled && !two.isEnabled) {
             if (!three.isEnabled && !four.isEnabled) {

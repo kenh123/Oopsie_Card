@@ -10,10 +10,7 @@
     android:clipChildren="false"
     tools:context=".MainActivity">
 
-    <nl.dionsegijn.konfetti.xml.KonfettiView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/confetti"/>
+
 
     <TableRow
         android:layout_width="match_parent"
@@ -28,7 +25,7 @@
             android:gravity="center"
             android:text="@string/textview"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="34sp" />
+            android:textSize="34sp"/>
     </TableRow>
 
     <TableRow
@@ -47,7 +44,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number1"
             android:text="@string/_1"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
 
         <ImageButton
             android:id="@+id/button2"
@@ -58,7 +55,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number2"
             android:text="@string/_2"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
 
         <ImageButton
             android:id="@+id/button3"
@@ -69,7 +66,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number3"
             android:text="@string/_3"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
 
         <ImageButton
             android:id="@+id/button4"
@@ -80,7 +77,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number4"
             android:text="@string/_4"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
 
         <ImageButton
             android:id="@+id/button5"
@@ -91,7 +88,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number5"
             android:text="@string/_5"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
     </TableRow>
 
     <TableRow
@@ -99,7 +96,8 @@
         android:layout_height="match_parent"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="20dp"
-        android:gravity="center">
+        android:gravity="center"
+        app:strokeColor="@null">
 
         <ImageButton
             android:id="@+id/button6"
@@ -110,7 +108,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number6"
             android:text="@string/_6"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
 
         <ImageButton
             android:id="@+id/button7"
@@ -121,7 +119,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number7"
             android:text="@string/_7"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
 
         <ImageButton
             android:id="@+id/button8"
@@ -132,7 +130,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number8"
             android:text="@string/_8"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
 
         <ImageButton
             android:id="@+id/button9"
@@ -143,7 +141,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number9"
             android:text="@string/_9"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
 
         <ImageButton
             android:id="@+id/button10"
@@ -154,7 +152,7 @@
             android:onClick="holePunch"
             android:src="@drawable/number10"
             android:text="@string/_10"
-            android:textColor="#040303" />
+            android:textColor="#040303"/>
     </TableRow>
 
     <TableRow
@@ -166,6 +164,6 @@
             android:id="@+id/useOopsie"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/use_oopsie" />
+            android:text="@string/use_oopsie"/>
     </TableRow>
 </TableLayout>

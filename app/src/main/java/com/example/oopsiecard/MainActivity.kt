@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         application.onCreate()
         setContentView(R.layout.activity_main)
+        repository = Repository(application)
 
         one = findViewById(R.id.button1)
         two = findViewById(R.id.button2)
@@ -61,12 +62,13 @@ class MainActivity : AppCompatActivity() {
         titles.add("Good job bud!")
         titles.add("I knew you could do it!")
         titles.add("Keep it up!")
-
-
-        repository = Repository(application)
+        repository.allHoles()
+        Thread.sleep(100)
         allHoles = repository.allPunchedHoles as ArrayList<Int>?
+        Log.d("TAG", repository.allPunchedHoles.toString())
+        Log.d("TAG", allHoles.toString())
 
-        if(allHoles == null){
+        if(allHoles.isNullOrEmpty()){
 
             repository.insert(PunchedHoles(1, R.drawable.number1))
             repository.insert(PunchedHoles(2, R.drawable.number2))
@@ -81,6 +83,10 @@ class MainActivity : AppCompatActivity() {
             repository.insert(PunchedHoles(11, 0))
             repository.allHoles()
             allHoles = repository.allPunchedHoles as ArrayList<Int>?
+            Log.d("TAG", allHoles.toString())
+            Log.d("TAG", repository.allPunchedHoles.toString())
+            Log.d("TAG", "It reset")
+
         }
 
         one.setImageResource(allHoles!![0])
@@ -93,7 +99,37 @@ class MainActivity : AppCompatActivity() {
         eight.setImageResource(allHoles!![7])
         nine.setImageResource(allHoles!![8])
         ten.setImageResource(allHoles!![9])
-        counter = allHoles!![10]
+        if(allHoles!![0] != R.drawable.number1){
+            one.isEnabled = false
+        }
+        if(allHoles!![1] != R.drawable.number2){
+            two.isEnabled = false
+        }
+        if(allHoles!![2] != R.drawable.number3){
+            three.isEnabled = false
+        }
+        if(allHoles!![3] != R.drawable.number4){
+            four.isEnabled = false
+        }
+        if(allHoles!![4] != R.drawable.number5){
+            five.isEnabled = false
+        }
+        if(allHoles!![5] != R.drawable.number6) {
+            six.isEnabled = false
+        }
+        if(allHoles!![6] != R.drawable.number7) {
+            seven.isEnabled = false
+        }
+        if(allHoles!![7] != R.drawable.number8) {
+            eight.isEnabled = false
+        }
+        if(allHoles!![8] != R.drawable.number9) {
+            nine.isEnabled = false
+        }
+        if(allHoles!![9] != R.drawable.number10){
+            ten.isEnabled = false
+        }
+
     }
 
     fun useOopsie(view:View){
@@ -104,13 +140,35 @@ class MainActivity : AppCompatActivity() {
 
     fun holePunch(view: View) {
         val button: ImageButton = view as ImageButton
-        val buttonId: Int = button.id
+        var buttonId = 0
+        if(button.id == one.id){
+            buttonId = 1
+        }else if(button.id == two.id){
+            buttonId = 2
+        }else if(button.id == three.id){
+            buttonId = 3
+        }else if(button.id == four.id){
+            buttonId = 4
+        }else if(button.id == five.id){
+            buttonId = 5
+        }else if(button.id == six.id){
+            buttonId = 6
+        }else if(button.id == seven.id){
+            buttonId = 7
+        }else if(button.id == eight.id){
+            buttonId = 8
+        }else if(button.id == nine.id){
+            buttonId = 9
+        }else if(button.id == ten.id){
+            buttonId = 10
+        }
+
         val newPicture: Int = holePunchedImages.random()
         button.setImageResource(newPicture)
         repository.update(PunchedHoles(buttonId, newPicture))
         button.isEnabled = false
 
-        val inflater: LayoutInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        /*val inflater: LayoutInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val popupView: View = inflater.inflate(R.layout.popup, null)
 
         val width: Int = LinearLayout.LayoutParams.WRAP_CONTENT
@@ -125,7 +183,7 @@ class MainActivity : AppCompatActivity() {
                 popupWindow.dismiss()
                 return true
             }
-        })
+        })*/
         //TODO figure out how to change pop up message later
         //popupMessage = findViewById(R.id.popupMessage)
         //popupMessage.text = titles.random()
@@ -177,6 +235,9 @@ class MainActivity : AppCompatActivity() {
         repository.update(PunchedHoles(8, R.drawable.number8))
         repository.update(PunchedHoles(9, R.drawable.number9))
         repository.update(PunchedHoles(10, R.drawable.number10))
+        allHoles = repository.allPunchedHoles as ArrayList<Int>?
+        Log.d("TAG", counter.toString())
+        Log.d("TAG", allHoles.toString())
 
     }
     //TODO add confetti animation

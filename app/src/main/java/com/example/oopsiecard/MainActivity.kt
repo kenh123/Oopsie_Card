@@ -124,8 +124,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun useOopsie(view:View){
-        counter--
-        repository.update(PunchedHoles(11, counter))
+        if(allHoles!![10] == 0){
+            Toast.makeText(this, "No oopsies left to use", Toast.LENGTH_LONG).show()
+        }else {
+            counter--
+            repository.update(PunchedHoles(11, counter))
+            allHoles!![10] = counter
+            Toast.makeText(this, "Oopsie!!", Toast.LENGTH_LONG).show()
+        }
         //TODO make the popup come up here as well
     }
 
@@ -197,7 +203,6 @@ class MainActivity : AppCompatActivity() {
         ten.setImageResource(R.drawable.number10)
 
         counter++
-        repository.update(PunchedHoles(11, counter))
         repository.update(PunchedHoles(1, R.drawable.number1))
         repository.update(PunchedHoles(2, R.drawable.number2))
         repository.update(PunchedHoles(3, R.drawable.number3))
@@ -208,10 +213,10 @@ class MainActivity : AppCompatActivity() {
         repository.update(PunchedHoles(8, R.drawable.number8))
         repository.update(PunchedHoles(9, R.drawable.number9))
         repository.update(PunchedHoles(10, R.drawable.number10))
+        repository.update(PunchedHoles(11, counter))
         allHoles = repository.allPunchedHoles as ArrayList<Int>?
-        Log.d("TAG", counter.toString())
         Log.d("TAG", allHoles.toString())
-
+        Log.d("TAG", repository.allPunchedHoles.toString())
     }
     //TODO add confetti animation
 }

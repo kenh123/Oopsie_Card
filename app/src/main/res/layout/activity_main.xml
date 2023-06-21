@@ -164,6 +164,12 @@
             android:id="@+id/useOopsie"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/use_oopsie"/>
+            android:onClick="useOopsie"
+            android:text="@string/use_oopsie" />
     </TableRow>
+
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+
+        android:visibility="invisible"/>
+
 </TableLayout>

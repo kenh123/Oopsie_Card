@@ -1,17 +1,11 @@
 package com.example.oopsiecard
 
-import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.PopupWindow
-import android.widget.TextView
+import android.widget.Toast
 import nl.dionsegijn.konfetti.xml.KonfettiView
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var eight: ImageButton
     private lateinit var nine: ImageButton
     private lateinit var ten: ImageButton
-    private lateinit var popupMessage: TextView
     private lateinit var confetti: KonfettiView
     private var counter: Int = 0
 
@@ -83,9 +76,6 @@ class MainActivity : AppCompatActivity() {
             repository.insert(PunchedHoles(11, 0))
             repository.allHoles()
             allHoles = repository.allPunchedHoles as ArrayList<Int>?
-            Log.d("TAG", allHoles.toString())
-            Log.d("TAG", repository.allPunchedHoles.toString())
-            Log.d("TAG", "It reset")
 
         }
 
@@ -99,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         eight.setImageResource(allHoles!![7])
         nine.setImageResource(allHoles!![8])
         ten.setImageResource(allHoles!![9])
+        counter = allHoles!![10]
         if(allHoles!![0] != R.drawable.number1){
             one.isEnabled = false
         }
@@ -135,7 +126,7 @@ class MainActivity : AppCompatActivity() {
     fun useOopsie(view:View){
         counter--
         repository.update(PunchedHoles(11, counter))
-
+        //TODO make the popup come up here as well
     }
 
     fun holePunch(view: View) {
@@ -168,25 +159,7 @@ class MainActivity : AppCompatActivity() {
         repository.update(PunchedHoles(buttonId, newPicture))
         button.isEnabled = false
 
-        /*val inflater: LayoutInflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val popupView: View = inflater.inflate(R.layout.popup, null)
-
-        val width: Int = LinearLayout.LayoutParams.WRAP_CONTENT
-        val height: Int = LinearLayout.LayoutParams.WRAP_CONTENT
-        val focusable = true
-        val popupWindow = PopupWindow(popupView, width, height, focusable)
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0)
-        //confetti = findViewById(R.id.confetti)
-
-        popupView.setOnTouchListener(object : View.OnTouchListener{
-            override fun onTouch(p0: View?, p1: MotionEvent?): Boolean {
-                popupWindow.dismiss()
-                return true
-            }
-        })*/
-        //TODO figure out how to change pop up message later
-        //popupMessage = findViewById(R.id.popupMessage)
-        //popupMessage.text = titles.random()
+        Toast.makeText(this, titles.random(), Toast.LENGTH_LONG).show()
 
         if (!one.isEnabled && !two.isEnabled) {
             if (!three.isEnabled && !four.isEnabled) {

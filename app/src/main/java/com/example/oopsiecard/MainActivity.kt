@@ -6,7 +6,11 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
+import nl.dionsegijn.konfetti.core.Party
+import nl.dionsegijn.konfetti.core.Position
+import nl.dionsegijn.konfetti.core.emitter.Emitter
 import nl.dionsegijn.konfetti.xml.KonfettiView
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
     private lateinit var repository: Repository
@@ -43,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         nine = findViewById(R.id.button9)
         ten = findViewById(R.id.button10)
 
+        confetti = findViewById(R.id.confettiView)
+
         holePunchedImages.add(R.drawable.heart)
         holePunchedImages.add(R.drawable.kite)
         holePunchedImages.add(R.drawable.smileyface)
@@ -58,8 +64,6 @@ class MainActivity : AppCompatActivity() {
         repository.allHoles()
         Thread.sleep(100)
         allHoles = repository.allPunchedHoles as ArrayList<Int>?
-        Log.d("TAG", repository.allPunchedHoles.toString())
-        Log.d("TAG", allHoles.toString())
 
         if(allHoles.isNullOrEmpty()){
 
@@ -123,6 +127,18 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun startParty(){
+        val party: Party = Party(
+            speed = 0f,
+            maxSpeed = 30f,
+            damping = 0.9f,
+            spread = 360,
+            colors = listOf(0xfce18a, 0xff726d, 0xf4306d, 0xb48def),
+            emitter = Emitter(duration = 100, TimeUnit.MILLISECONDS).max(100),
+            position = Position.Relative(0.5, 0.3)
+        )
+        confetti.start(party)
+    }
     fun useOopsie(view:View){
         if(allHoles!![10] == 0){
             Toast.makeText(this, "No oopsies left to use", Toast.LENGTH_LONG).show()
@@ -131,6 +147,7 @@ class MainActivity : AppCompatActivity() {
             repository.update(PunchedHoles(11, counter))
             allHoles!![10] = counter
             Toast.makeText(this, "Oopsie!!", Toast.LENGTH_LONG).show()
+            startParty()
         }
     }
 
@@ -165,6 +182,7 @@ class MainActivity : AppCompatActivity() {
         button.isEnabled = false
 
         Toast.makeText(this, titles.random(), Toast.LENGTH_LONG).show()
+        startParty()
 
         if (!one.isEnabled && !two.isEnabled) {
             if (!three.isEnabled && !four.isEnabled) {

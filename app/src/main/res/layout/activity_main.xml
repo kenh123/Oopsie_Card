@@ -10,139 +10,162 @@
     android:clipChildren="false"
     tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="casual"
-            android:gravity="center"
-            android:text="@string/oopsie_card"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="34sp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:text="@string/oopsie_card"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        android:translationX="250dp" />
 
-        <ImageButton
-            android:id="@+id/button1"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_1"
-            android:onClick="holePunch"
-            android:src="@drawable/number1"
-            android:text="@string/_1"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button1"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_1"
+        android:onClick="holePunch"
+        android:src="@drawable/number1"
+        android:text="@string/_1"
+        android:textColor="#040303"
+        android:translationX="100dp"
+        android:translationY="100dp" />
 
-        <ImageButton
-            android:id="@+id/button2"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_2"
-            android:onClick="holePunch"
-            android:src="@drawable/number2"
-            android:text="@string/_2"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button2"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_2"
+        android:onClick="holePunch"
+        android:src="@drawable/number2"
+        android:text="@string/_2"
+        android:textColor="#040303"
+        android:translationX="200dp"
+        android:translationY="100dp" />
 
-        <ImageButton
-            android:id="@+id/button3"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_3"
-            android:onClick="holePunch"
-            android:src="@drawable/number3"
-            android:text="@string/_3"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button3"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_3"
+        android:onClick="holePunch"
+        android:src="@drawable/number3"
+        android:text="@string/_3"
+        android:textColor="#040303"
+        android:translationX="300dp"
+        android:translationY="100dp" />
 
-        <ImageButton
-            android:id="@+id/button4"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_4"
-            android:onClick="holePunch"
-            android:src="@drawable/number4"
-            android:text="@string/_4"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button4"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_4"
+        android:onClick="holePunch"
+        android:src="@drawable/number4"
+        android:text="@string/_4"
+        android:textColor="#040303"
+        android:translationX="400dp"
+        android:translationY="100dp" />
 
-        <ImageButton
-            android:id="@+id/button5"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_5"
-            android:onClick="holePunch"
-            android:src="@drawable/number5"
-            android:text="@string/_5"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button5"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_5"
+        android:onClick="holePunch"
+        android:src="@drawable/number5"
+        android:text="@string/_5"
+        android:textColor="#040303"
+        android:translationX="500dp"
+        android:translationY="100dp" />
 
     <nl.dionsegijn.konfetti.xml.KonfettiView
         android:id="@+id/confettiView"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="match_parent"
         android:visibility="visible" />
 
-        <ImageButton
-            android:id="@+id/button6"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_6"
-            android:onClick="holePunch"
-            android:src="@drawable/number6"
-            android:text="@string/_6"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button6"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_6"
+        android:onClick="holePunch"
+        android:src="@drawable/number6"
+        android:text="@string/_6"
+        android:textColor="#040303"
+        android:translationX="100dp"
+        android:translationY="200dp" />
 
-        <ImageButton
-            android:id="@+id/button7"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_7"
-            android:onClick="holePunch"
-            android:src="@drawable/number7"
-            android:text="@string/_7"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button7"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_7"
+        android:onClick="holePunch"
+        android:src="@drawable/number7"
+        android:text="@string/_7"
+        android:textColor="#040303"
+        android:translationX="200dp"
+        android:translationY="200dp" />
 
-        <ImageButton
-            android:id="@+id/button8"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_8"
-            android:onClick="holePunch"
-            android:src="@drawable/number8"
-            android:text="@string/_8"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button8"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_8"
+        android:onClick="holePunch"
+        android:src="@drawable/number8"
+        android:text="@string/_8"
+        android:textColor="#040303"
+        android:translationX="300dp"
+        android:translationY="200dp" />
 
-        <ImageButton
-            android:id="@+id/button9"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_9"
-            android:onClick="holePunch"
-            android:src="@drawable/number9"
-            android:text="@string/_9"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button9"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_9"
+        android:onClick="holePunch"
+        android:src="@drawable/number9"
+        android:text="@string/_9"
+        android:textColor="#040303"
+        android:translationX="400dp"
+        android:translationY="200dp" />
 
-        <ImageButton
-            android:id="@+id/button10"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/_10"
-            android:onClick="holePunch"
-            android:src="@drawable/number10"
-            android:text="@string/_10"
-            android:textColor="#040303" />
+    <ImageButton
+        android:id="@+id/button10"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/_10"
+        android:onClick="holePunch"
+        android:src="@drawable/number10"
+        android:text="@string/_10"
+        android:textColor="#040303"
+        android:translationX="500dp"
+        android:translationY="200dp" />
 
 
-        <Button
-            android:id="@+id/useOopsie"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:onClick="useOopsie"
-            android:text="@string/use_oopsie" />
+    <Button
+        android:id="@+id/useOopsie"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:onClick="useOopsie"
+        android:text="@string/use_oopsie"
+        android:translationX="550dp"
+        android:translationY="300dp" />
 
 
 </RelativeLayout>

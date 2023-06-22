@@ -11,6 +11,10 @@
     tools:context=".MainActivity">
 
 
+    <nl.dionsegijn.konfetti.xml.KonfettiView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
     <TableRow
         android:layout_width="match_parent"
@@ -23,9 +27,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="casual"
             android:gravity="center"
-            android:text="@string/textview"
+            android:text="@string/oopsie_card"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="34sp"/>
+            android:textSize="34sp" />
     </TableRow>
 
     <TableRow
@@ -168,8 +172,5 @@
             android:text="@string/use_oopsie" />
     </TableRow>
 
-    <nl.dionsegijn.konfetti.xml.KonfettiView
-
-        android:visibility="invisible"/>
 
 </TableLayout>

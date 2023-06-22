@@ -132,7 +132,6 @@ class MainActivity : AppCompatActivity() {
             allHoles!![10] = counter
             Toast.makeText(this, "Oopsie!!", Toast.LENGTH_LONG).show()
         }
-        //TODO make the popup come up here as well
     }
 
     fun holePunch(view: View) {
